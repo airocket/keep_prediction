@@ -2,18 +2,18 @@
 version: '3'
     
 services:
-  predict:
-    restart: always
-    build: ./keep_prediction
-    command: python3 main.py
-    volumes:
-      - ./keep_prediction/:/usr/src/app/
-    network_mode: "host"
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "5"
+#   predict:
+#     restart: always
+#     build: ./keep_prediction
+#     command: python3 main.py
+#     volumes:
+#       - ./keep_prediction/:/usr/src/app/
+#     network_mode: "host"
+#     logging:
+#       driver: "json-file"
+#       options:
+#         max-size: "10m"
+#         max-file: "5"
 
   db:
     restart: always
@@ -33,16 +33,3 @@ services:
       options:
         max-size: "10m"
         max-file: "5"
-
-#docker-compose up -d --build
-#docker-compose down
-#docker stop $(docker ps -q) | docker rm $(docker ps -a -q) | docker rmi $(docker images -q)
-
-# sudo apt-get update
-# sudo apt update
-# sudo apt -y upgrade
-# sudo apt install -y python3-pip
-# sudo apt-get install libpq-dev python-dev
-# sudo pip3 install psycopg2
-#pip3 install psycopg2-binary
-#sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3001
